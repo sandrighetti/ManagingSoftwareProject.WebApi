@@ -12,7 +12,10 @@ namespace ManagingSoftwareProject.WebApi.Data
         {
         }
 
-        public DbSet<ProdutoPronto> ProdutoPronto { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Fornecedor> Fornecedores { get; set; }
+        public DbSet<MateriaPrima> MateriasPrimas { get; set; }
+        public DbSet<ProdutoPronto> ProdutosProntos { get; set; }
 
         public async Task<bool> Commit()
         {

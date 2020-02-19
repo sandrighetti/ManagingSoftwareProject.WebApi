@@ -26,6 +26,9 @@ namespace ManagingSoftwareProject.WebApi
                 options.UseSqlServer(Configuration.GetConnectionString("SqlServerDatabase"));
             });
 
+            services.AddScoped<EnderecoRepository>();
+            services.AddScoped<FornecedorRepository>();
+            services.AddScoped<MateriaPrimaRepository>();
             services.AddScoped<ProdutoProntoRepository>();
             services.AddScoped<DbContext, ManagingSoftwareProjectWebApiContext>();
 
