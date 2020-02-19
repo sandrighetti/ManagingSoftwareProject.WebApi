@@ -1,0 +1,22 @@
+﻿using System.Threading.Tasks;
+using ManagingSoftwareProject.WebApi.Entities;
+using ManagingSoftwareProject.WebApi.Data.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
+namespace ManagingSoftwareProject.WebApi.Data
+{
+    public class ManagingSoftwareProjectWebApiContext : DbContext, IUnitOfWork
+    {
+        public ManagingSoftwareProjectWebApiContext(DbContextOptions<ManagingSoftwareProjectWebApiContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<ProdutoPronto> ProdutoPronto { get; set; }
+
+        public async Task<bool> Commit()
+        {
+            return await base.SaveChangesAsync() > 0;
+        }
+    }
+}
